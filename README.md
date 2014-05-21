@@ -1,6 +1,6 @@
 # Textalytics
 
-TODO: Write a gem description
+TODO: Write a better gem description
 
 ## Installation
 
