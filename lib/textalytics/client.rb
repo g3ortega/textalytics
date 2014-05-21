@@ -2,34 +2,22 @@ require "httparty"
 
 module Textalytics
 
-	class Client
-	
-  	include HTTParty
-
-		base_uri 'https://textalytics.com/core'
-	
-		@uris = {
-			sentimental_analysis: '/sentiment-1.1',
-			topics_extraction: '/topics-1.2',
-			text_classification: '/class-1.1'
-			}
+  class Client
+    include Helpers::Request
+    include Api::Sentiment
+    include Api::Topics
+    include Api::Classification
 
 
-		def initialize(args) 
-		  @sentiment_analysis_key = args[:sentiment_analysis]
-			@topics_extraction_key = args[:topics_extraction]
-			@text_classification_key = args[:text_classification]
-		end
-		
+    attr_reader :sentiment_key, :topics_key, :classification_key
 
-		# def category_list(options={})
-		# 	options.merge!({key: @text_classification_key})
-		# 	puts options
-		# 	self.class.post('/class-1.1',options)
-		# end
+    def initialize(args)
+      @sentiment_key = args[:sentiment]
+      @topics_key = args[:topics]
+      @classification_key = args[:classification]
+    end
 
-
-	end
+  end
 
 
 end
