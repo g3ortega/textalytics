@@ -18,4 +18,5 @@ module Textalytics
   autoload :Errors,  "textalytics/errors"
   autoload :Helpers, "textalytics/helpers"
   autoload :Version, "textalytics/version"
+  autoload :Errors,  "textalytics/errors"
 end
