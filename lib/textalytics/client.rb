@@ -1,5 +1,3 @@
-require "httparty"
-
 module Textalytics
 
   class Client

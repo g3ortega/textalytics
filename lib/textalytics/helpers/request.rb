@@ -17,14 +17,14 @@ module Textalytics
 
       protected
 
-      def get(path, options={})
-        response = self.class.get(path, options)
+      def get(url, options={})
+        response = self.class.get(url, options)
         raise_errors(response)
         response.to_hash
       end
 
-      def post(path, body='', options={})
-        response = self.class.post(path, options)
+      def post(url, body='', options={})
+        response = self.class.post(url, options)
         raise_errors(response)
         response.to_hash
       end
