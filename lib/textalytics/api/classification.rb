@@ -6,10 +6,20 @@ module Textalytics
     # @see https://textalytics.com/core/class-info Text Classification API documentation
     #
 
+
     module Classification
 
-      def categories(options={})
-        "Hello world #{options[:txt]}"
+      include Textalytics::Api::EntityClassification
+      include Textalytics::Helpers
+
+      def classification(options={})
+        options[:key] = @classification_key
+        options[:of] = 'json'
+        query = { query: options}
+        puts query
+        response = get(CLASSIFICATION, query)
+        puts response
+        classification = ClassificationEntity.new(response)
       end
 
 

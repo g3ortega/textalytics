@@ -2,11 +2,11 @@ module LinkedIn
   module Api
 
     module QueryHelpers
-      private
+      # private
 
       # TODO: Create a method to build a path with the secret key and other params
-      def build_path(options)
-
+      def build_query(options)
+        query = { query: options }
       end
 
     end

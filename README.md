@@ -2,6 +2,14 @@
 
 TODO: Write a better gem description
 
+## Use
+
+    t = Textalytics,new(sentiment: "insert your sentiment API key", classification: "insert your classification API key", topics: "...")
+    movie_sentiment = t.sentiment(txt: 'La pelicula estuvo terrible, no volveré a ver una pelicula de ese terrible actor', model: 'es-general')
+    movie_sentiment.score_tag
+    movie_sentiment.sd_tag #etc, etc...
+    
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -15,6 +23,11 @@ And then execute:
 Or install it yourself as:
 
     $ gem install textalytics
+    
+## TODO
+
+* Write tests
+* Write a better documentation
 
 ## Usage
 
