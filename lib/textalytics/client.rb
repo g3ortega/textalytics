@@ -2,11 +2,9 @@ module Textalytics
 
   class Client
     include Helpers::Request
-    include Api::EntityClassification
-    include Api::EntitySentiment
-    include Api::Sentiment
-    include Api::Topics
-    include Api::Classification
+    include Api::ClassificationEntity
+    include Api::SentimentEntity
+    include Api::Base
     include HTTParty
 
     base_uri 'https://textalytics.com/core'

@@ -2,51 +2,51 @@ module Textalytics
 
   module Api
 
-    module EntitySentiment
+    module SentimentEntity
 
-      class SentimentEntity
+      class Sentiment
         attr_reader :subjectivity, :irony, :score,
                     :score_tag, :sd, :sd_tag, :segment_list,
-                    :entity_list, :concept_list
+                    :entity_list, :concept_list, :all
 
         def initialize(response)
-          @response = response
+          @all = response
         end
 
         def subjectivity
-          @response["subjectivity"]
+          @all["subjectivity"]
         end
 
         def irony
-          @response["ironi"]
+          @all["ironi"]
         end
 
         def score
-          @response["score"]
+          @all["score"]
         end
 
         def score_tag
-          @response["score_tag"]
+          @all["score_tag"]
         end
 
         def sd
-          @response["sd"]
+          @all["sd"]
         end
 
         def sd_tag
-          @response["sd_tag"]
+          @all["sd_tag"]
         end
 
         def segment_list
-          @response["segment_list"]
+          @all["segment_list"]
         end
 
         def entity_list
-          @response["entity_list"]
+          @all["entity_list"]
         end
 
         def concept_list
-          @response["concept_list"]
+          @all["concept_list"]
         end
 
       end

@@ -1,12 +1,13 @@
 module Textalytics
   module Api
-    module EntityClassification
+    module ClassificationEntity
 
-      class ClassificationEntity
-        attr_reader :category_list, :categories
+      class Classification
+        attr_reader :category_list, :categories, :all
 
         def initialize(response)
           @category_list = response["category_list"]
+          @all = response
         end
 
         def categories
