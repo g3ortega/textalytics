@@ -4,10 +4,15 @@ TODO: Write a better gem description
 
 ## Use
 
-    t = Textalytics,new(sentiment: "insert your sentiment API key", classification: "insert your classification API key", topics: "...")
+    t = Textalytics.new(sentiment: "insert your sentiment API key", classification: "insert your classification API key", topics: "...")
+    
+    # Example using Sentiment API
     movie_sentiment = t.sentiment(txt: 'La pelicula estuvo terrible, no volveré a ver una pelicula de ese terrible actor', model: 'es-general')
     movie_sentiment.score_tag
     movie_sentiment.sd_tag #etc, etc...
+    
+    # Example using Text Classification API
+    TODO: Add some examples
     
 
 ## Installation
