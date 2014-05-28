@@ -2,18 +2,28 @@ require 'spec_helper'
 
 describe Textalytics::Client do
 
-  let(:client) do
-    sentiment_key  = ENV['SENTIMENT_KEY'] || 'sentiment_key'
-    topics_key = ENV['TOPICS_KEY'] || 'topics_key'
-    classification_key = ENV['CLASSIFICATION_KEY'] || 'classification_key'
-    language_key = ENV['LANGUAGE_KEY'] || 'language_key'
-    client = Textalytics::Client.new(sentiment: sentiment_key, topics: topics_key, classification: classification_key, language: language_key)
-    client
-  end
+    it "should initialize the api keys from environment variables" do
+      client = Textalytics::Client.new
+      client.language_key.should_not be_nil
+      client.classification_key.should_not be_nil
+      client.sentiment_key.should_not be_nil
+      client.topics_key.should_not be_nil
+    end
 
-    it "should initialize the api keys" do
-      element_data = Textalytics::Client.new(sentiment: "123456")
-      element_data.sentiment_key.should_not be_nil
+    it "should not initialize any api keys from environment variables" do
+      ENV.delete('SENTIMENT_KEY')
+      ENV.delete('TOPICS_KEY')
+      ENV.delete('CLASSIFICATION_KEY')
+      ENV.delete('LANGUAGE_KEY')
+
+      new_client = Textalytics::Client.new
+      new_client.sentiment_key.should be_nil
+    end
+
+    it "should change the default environment values when arguments are provided" do
+      ENV['SENTIMENT_KEY'] = '87654321'
+      client = Textalytics::Client.new(sentiment: '12345678')
+      expect(client.sentiment_key).to eq('12345678')
     end
 
 end

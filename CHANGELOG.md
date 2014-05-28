@@ -1,7 +1,8 @@
 0.03
 ---
 
-* First functional version (I'm working on that right now)
+* First functional version
+* Support for Language Identification API
 
 0.02
 ---
