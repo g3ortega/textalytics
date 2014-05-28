@@ -5,6 +5,7 @@ module Textalytics
       include Textalytics::Api::ClassificationEntity
       include Textalytics::Api::SentimentEntity
       include Textalytics::Api::TopicsEntity
+      include Textalytics::Api::LanguageEntity
       include Textalytics::Helpers
 
 
@@ -29,7 +30,7 @@ module Textalytics
         Sentiment.new(response)
       end
 
-      # Topics API
+      # Topics Extraction API
       # @see https://textalytics.com/core/topics-info Topics Extraction API documentation
       def topics(options = {})
         options[:key] = @topics_key
@@ -37,10 +38,19 @@ module Textalytics
         unless options.has_key?(:tt)
           options[:tt] = 'a'
         end
-        # TODO: Write tt -topics type- defaults
         query = { query: options}
         response = get(TOPICS, query)
         Topics.new(response)
+      end
+
+      # Language Identification API
+      # @see https://textalytics.com/core/lang-info#doc
+      def language(options = {})
+        options[:key] = @language_key
+        options[:of] = 'json'
+        query = { query: options}
+        response = get(LANGUAGE, query)
+        Language.new(response)
       end
 
     end

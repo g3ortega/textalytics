@@ -49,40 +49,6 @@ module Textalytics
 
       end
 
-      #TODO: Write docs for every class
-      #TODO: Transform data from some topics types in classes
-      class Entity
-
-      end
-
-      class Concept
-
-      end
-
-      class TimeExpression
-
-      end
-
-      class MoneyExpression
-
-      end
-
-      class Uri
-
-      end
-
-      class PhoneExpression
-
-      end
-
-      class Quotation
-
-      end
-
-      class Relation
-
-      end
-
     end
   end
 end

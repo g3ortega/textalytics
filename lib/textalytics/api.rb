@@ -6,5 +6,6 @@ module Textalytics
     autoload :ClassificationEntity, "textalytics/api/entities/classification_entity"
     autoload :SentimentEntity, "textalytics/api/entities/sentiment_entity"
     autoload :TopicsEntity, "textalytics/api/entities/topics_entity"
+    autoload :LanguageEntity, "textalytics/api/entities/language_entity"
   end
 end

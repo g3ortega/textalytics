@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Gerardo Ortega"]
   spec.email         = ["geraldavid7@gmail.com"]
   spec.summary       = %q{Ruby wrapper the Textalytics API}
-  spec.description   = %q{This gem pretends to make easier the process of text analysis through the Textalytics service}
+  spec.description   = %q{This gem pretends to make easier the process of text analysis through the Textalytics APIs}
   spec.homepage      = ""
   spec.license       = "MIT"
 
