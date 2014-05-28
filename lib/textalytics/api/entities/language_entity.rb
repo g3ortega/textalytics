@@ -6,7 +6,7 @@ module Textalytics
         attr_reader :language_list, :all
 
         def initialize(response)
-          @lang_list = response["lang_list"]
+          @language_list = response["lang_list"]
           @all = response
         end
       end
