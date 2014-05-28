@@ -4,15 +4,31 @@ TODO: Write a better gem description
 
 ## Use
 
-    t = Textalytics.new(sentiment: "insert your sentiment API key", classification: "insert your classification API key", topics: "...")
+You have two options when creating a new client. Create environment variables for each API key:
+
+    export SENTIMENT_KEY=<your key>
+    export CLASSIFICATION_KEY=<...>
+    export LANGUAGE_KEY=<...>
+    export TOPICS_KEY=<...>
+                                       
+    t = Textalytics::Client.new
+
+Otherwise you have to pass the keys as arguments:
+
+    t = Textalytics::Client.new(sentiment: "insert your sentiment API key", classification: "insert your classification API key", topics: "...")
     
+
+### Using Sentiment API
+
     # Example using Sentiment API
     movie_sentiment = t.sentiment(txt: 'La pelicula estuvo terrible, no volveré a ver una pelicula de ese terrible actor', model: 'es-general')
     movie_sentiment.score_tag
     movie_sentiment.sd_tag #etc, etc...
     
-    # Example using Text Classification API
+### Using Text Classification API
+    
     TODO: Add some examples
+    
     
 
 ## Installation
