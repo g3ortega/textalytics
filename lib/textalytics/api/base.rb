@@ -35,9 +35,11 @@ module Textalytics
       def topics(options = {})
         options[:key] = @topics_key
         options[:of] = 'json'
+
         unless options.has_key?(:tt)
           options[:tt] = 'a'
         end
+
         query = { query: options}
         response = get(TOPICS, query)
         Topics.new(response)
