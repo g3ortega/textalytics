@@ -1,3 +1,8 @@
+0.04
+---
+
+* Solving dependency issue
+
 0.03
 ---
 
