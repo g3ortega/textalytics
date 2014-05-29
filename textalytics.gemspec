@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{This gem pretends to make easier the process of text analysis through the Textalytics APIs}
   spec.homepage      = ""
   spec.license       = "MIT"
-
+  spec.add_dependency 'httparty', '~> 0.12'
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.3.1'
 	spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency 'rspec', '~> 2.14.1'
-  spec.add_development_dependency 'httparty', '~> 0.12'
+
 end
 
 
