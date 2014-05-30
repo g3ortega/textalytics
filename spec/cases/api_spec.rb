@@ -26,4 +26,9 @@ describe Textalytics::Client do
       expect(client.sentiment_key).to eq('12345678')
     end
 
+
+    it "should be an instance of Client" do
+
+    end
+
 end

@@ -55,6 +55,18 @@ module Textalytics
         Language.new(response)
       end
 
+      # User Demographic API
+      # @see http://textalytics.com/core/userdemographics-1.0-info
+
+      def demographics(options = {})
+        options[:key] = @demographics_key
+        options[:of] = 'json'
+        query = { query: options}
+        response = get(DEMOGRAPHICS, query)
+        # TODO: Create Entity for User Demographic API
+      end
+
+
     end
   end
 end
